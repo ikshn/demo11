@@ -1,0 +1,1 @@
+print("This is satyam and this is my first commit to git and github.")
