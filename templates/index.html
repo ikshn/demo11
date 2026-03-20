@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <section class="hero">
+    <div class="hero__copy">
+      <h1 class="hero__title">Feel the vibes in real time.</h1>
+      <p class="hero__lead">
+        Upload a voice clip or type a message, and get a vibrant emotion breakdown.
+        This demo uses lightweight placeholder predictors you can swap for real ML models.
+      </p>
+      <div class="hero__cta">
+        <a class="btn btn--primary" href="/text">Try Text Emotion</a>
+        <a class="btn btn--secondary" href="/speech">Try Speech Emotion</a>
+      </div>
+    </div>
+
+    <div class="hero__art" aria-hidden="true">
+      <div class="mosaic">
+        <img
+          class="mosaic__img"
+          src="https://images.unsplash.com/photo-1520975693411-bc2cbb9e1a8e?auto=format&fit=crop&w=640&q=80"
+          alt=""
+        />
+        <img
+          class="mosaic__img"
+          src="https://images.unsplash.com/photo-1520975869019-6c7cfb8d2f3e?auto=format&fit=crop&w=640&q=80"
+          alt=""
+        />
+        <img
+          class="mosaic__img"
+          src="https://images.unsplash.com/photo-1496307653780-42ee777d4833?auto=format&fit=crop&w=640&q=80"
+          alt=""
+        />
+        <img
+          class="mosaic__img"
+          src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=640&q=80"
+          alt=""
+        />
+      </div>
+      <div class="hero__badge">
+        <span class="chip chip--hot">Vibrant UI</span>
+        <span class="chip chip--cool">Speech + Text</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="grid2">
+    <article class="card card--glass">
+      <div class="card__icon">📝</div>
+      <h2 class="card__title">Text Emotion</h2>
+      <p class="card__text">Type anything and instantly see the top emotion and scores.</p>
+      <a class="btn btn--ghost" href="/text">Open Text</a>
+    </article>
+
+    <article class="card card--glass">
+      <div class="card__icon">🎙️</div>
+      <h2 class="card__title">Speech Emotion</h2>
+      <p class="card__text">Upload audio and get a quick emotion breakdown (stubbed for now).</p>
+      <a class="btn btn--ghost" href="/speech">Open Speech</a>
+    </article>
+  </section>
+{% endblock %}
+

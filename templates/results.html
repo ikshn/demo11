@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <section class="page">
+    <div class="page__header">
+      <h1 class="page__title">Emotion Result</h1>
+      <p class="page__subtitle">
+        {% if modality == "speech" %}Speech{% else %}Text{% endif %}
+        detection summary
+      </p>
+    </div>
+
+    <div class="result">
+      <div class="result__top">
+        <div class="badge">
+          <div class="badge__label">Top Emotion</div>
+          <div class="badge__value">{{ result.top_emotion }}</div>
+        </div>
+
+        <div class="result__meta">
+          <div class="pill">
+            <span class="pill__k">Input</span>
+            <span class="pill__v">
+              {% if input_text %}
+                {{ input_text }}
+              {% else %}
+                {{ input_caption }}
+              {% endif %}
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="bars">
+        {% for e in result.emotions %}
+          <div class="bar">
+            <div class="bar__row">
+              <div class="bar__label">{{ e.label }}</div>
+              <div class="bar__score">{{ (e.score * 100) | round(1) }}%</div>
+            </div>
+            <div class="bar__track" aria-hidden="true">
+              <div class="bar__fill bar__fill--{{ e.label | lower }}" style="width: {{ (e.score * 100) | round(1) }}%"></div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+
+      <div class="result__actions">
+        <a class="btn btn--ghost" href="/text">Detect Another Text</a>
+        <a class="btn btn--ghost" href="/speech">Detect Another Speech</a>
+      </div>
+    </div>
+  </section>
+{% endblock %}
+

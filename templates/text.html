@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <section class="page">
+    <div class="page__header">
+      <h1 class="page__title">Text Emotion</h1>
+      <p class="page__subtitle">Paste a message and hit detect.</p>
+    </div>
+
+    <form class="form" action="/text/predict" method="post">
+      <label class="label" for="text">Your text</label>
+      <textarea
+        id="text"
+        name="text"
+        class="textarea"
+        rows="6"
+        maxlength="1200"
+        placeholder="Try: “I am so happy today!!!” or “This is the worst.”"
+        required
+      ></textarea>
+
+      <div class="form__row">
+        <div class="hint">
+          <span class="hint__dot"></span>
+          <span id="charCount">0</span>/1200 characters
+        </div>
+        <button class="btn btn--primary" type="submit">Detect Emotion</button>
+      </div>
+    </form>
+
+    <div class="note">
+      This UI is vibrant by design. The emotion predictor is a lightweight stub you can replace with a real NLP model.
+    </div>
+  </section>
+{% endblock %}
+

@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <section class="page">
+    <div class="page__header">
+      <h1 class="page__title">Speech Emotion</h1>
+      <p class="page__subtitle">Upload an audio clip and get a quick breakdown.</p>
+    </div>
+
+    <form class="form" action="/speech/predict" method="post" enctype="multipart/form-data">
+      <label class="label" for="audio">Audio file</label>
+      <input
+        id="audio"
+        name="audio"
+        class="file"
+        type="file"
+        accept="audio/*"
+        required
+      />
+
+      <div class="form__row form__row--split">
+        <div>
+          <label class="label label--sm" for="language">Language (optional)</label>
+          <select id="language" name="language" class="select">
+            <option value="en" selected>English (en)</option>
+            <option value="es">Spanish (es)</option>
+            <option value="fr">French (fr)</option>
+            <option value="de">German (de)</option>
+            <option value="it">Italian (it)</option>
+          </select>
+        </div>
+
+        <button class="btn btn--primary" type="submit">Detect Emotion</button>
+      </div>
+    </form>
+
+    <div class="note">
+      Stub mode: this demo generates deterministic results from your uploaded bytes.
+      Plug in a real speech model later for real emotion inference.
+    </div>
+  </section>
+{% endblock %}
+

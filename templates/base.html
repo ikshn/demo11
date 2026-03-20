@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{ title if title else "Emotion Detect" }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='css/styles.css') }}" />
+  </head>
+  <body>
+    <div class="bg-orbs" aria-hidden="true">
+      <div class="orb orb--a"></div>
+      <div class="orb orb--b"></div>
+      <div class="orb orb--c"></div>
+    </div>
+
+    <header class="nav">
+      <div class="nav__brand">
+        <span class="logo">ED</span>
+        <div>
+          <div class="nav__title">Emotion Detect</div>
+          <div class="nav__subtitle">Text + Speech</div>
+        </div>
+      </div>
+
+      <nav class="nav__links" aria-label="Primary">
+        <a class="link" href="/">Home</a>
+        <a class="link" href="/text">Text</a>
+        <a class="link" href="/speech">Speech</a>
+      </nav>
+    </header>
+
+    <main class="container">
+      {% block content %}{% endblock %}
+    </main>
+
+    <footer class="footer">
+      <div class="footer__inner">
+        <span>Built with FastAPI + Jinja</span>
+        <span class="footer__dot">•</span>
+        <span>Replace stubs with real models anytime.</span>
+      </div>
+    </footer>
+
+    <script src="{{ url_for('static', path='js/app.js') }}"></script>
+  </body>
+</html>
+
