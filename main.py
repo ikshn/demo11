@@ -15,3 +15,8 @@ print(a*b)
 
 #Akash add this line
 #akash add new line on 20 march
+#aksh made a fun 
+def sum(a, b):
+    return a+b
+
+print(total = sum())
